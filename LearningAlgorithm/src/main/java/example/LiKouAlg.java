@@ -16,16 +16,19 @@ public class LiKouAlg {
 
     //1. **双指针**对已经排序的数组去重  ============================================================
     static int removeDuplicates(int[] nums) {
+        if(nums == null||nums.length==0) return 0;
         int left = 0;
-        int right = 1;
-        while (right < nums.length-1) {
-            if (nums[left] == nums[right]) {
-                right++;
-            }else{
-                left++;
-                nums[left] = nums[right];
-            }
+        for (int right = 1; right < nums.length - 1; right++) {
+            if (nums[left] != nums[right])
+                nums[++left] = nums[right];
         }
+//        while (right < nums.length-1) {
+//            if (nums[left] == nums[right]) {
+//                right++;
+//            }else{
+//                nums[++left] = nums[right];
+//            }
+//        }
         return left;
     }
 
