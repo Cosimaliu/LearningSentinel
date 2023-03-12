@@ -46,6 +46,7 @@ public class GuiBingAlg {
     static void print(int[] arr){
         for (int j : arr) {
             System.out.println(j);
+            //测试
         }
     }
 }
