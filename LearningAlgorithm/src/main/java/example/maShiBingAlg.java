@@ -1,6 +1,6 @@
 package example;
 
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * @Author liusc
@@ -10,9 +10,13 @@ import java.util.LinkedList;
 public class maShiBingAlg {
     public static void main(String[] args) {
         int[] a = new int[]{4,3,5,4,3,1,9,2};
-        int[] res = getMaxWindow(a,3);
-        for (int re : res) {
-            System.out.println(re);
+//        int[] res = getMaxWindow(a,3);
+        int[][] resDd = getNearLess(a);
+//        for (int re : res) {
+//            System.out.println(re);
+//        }
+        for (int[] ints : resDd) {
+            System.out.println(Arrays.toString(ints));
         }
     }
 
@@ -97,6 +101,55 @@ public class maShiBingAlg {
     /**
      * 单调栈实现【可处理重复数据】
      */
+    public static int[][] getNearLess(int[] arr){
+        int[][] res = new int[arr.length][2];
+        // List<Integer> -> 放的是位置，同样值的东西，位置压在一起
+        Stack<List<Integer>> stack  = new Stack<>();
+        for (int i = 0; i < arr.length; i++) { // i -> a[i] 进栈
+            // 底 -> 顶，小->大
+            while (!stack.isEmpty() && arr[stack.peek().get(0)]>arr[i]){
+                List<Integer> popIds = stack.pop();
+                // 取位于下面位置的列表中，最晚加入的哪个
+                int leftLessIndex = stack.isEmpty() ? -1 : stack.peek().get(stack.peek().size() - 1);
+                for (Integer popId : popIds) {
+                    res[popId][0] = leftLessIndex;
+                    res[popId][1] = i;
+                }
+            }
+            // 相等的、比你小的
+            if(!stack.isEmpty() && arr[stack.peek().get(0)]==arr[i]){
+                stack.peek().add(Integer.valueOf(i));
+            }else{
+                ArrayList<Integer> list = new ArrayList<>();
+                list.add(i);
+                stack.push(list);
+            }
+        }
+        while (!stack.isEmpty()){
+            List<Integer> popIs = stack.pop();
+            // 取位于下面的位置的列表中，最晚加入的那个
+            int leftLessIndex = stack.isEmpty() ? -1 : stack.peek().get(stack.peek().size() - 1);
+            for (Integer popId : popIs) {
+                res[popId][0] = leftLessIndex;
+                res[popId][1] = -1;
+            }
+        }
+        return res;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
