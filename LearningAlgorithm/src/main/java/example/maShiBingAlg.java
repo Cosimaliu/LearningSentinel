@@ -94,5 +94,10 @@ public class maShiBingAlg {
         return res;
     }
 
+    /**
+     * 单调栈实现【可处理重复数据】
+     */
+
+
 
 }
