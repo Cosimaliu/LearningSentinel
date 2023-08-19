@@ -12,8 +12,8 @@ package example.mashibing;
 public class BfprtAlg {
 
     public static void main(String[] args) {
-        int k = getIndexOf("abaaaac", "   ac");
-        System.out.println("k的值是：" + k);
+        int k = getIndexOf("abaasadsaaac", "ac");
+        System.out.println("k的=值是：" + k);
     }
 
     public static int getIndexOf(String s, String m) {

@@ -12,7 +12,7 @@ public class FrogJumpsStepsAlg {
 
     public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("请输入需要跳到第几个台阶：");
+        System.out.print("请输入需要跳到第   几个台阶：");
         int n = scanner.nextInt();
         Long fStartTime = new Date().getTime();
         System.out.println(f(n));

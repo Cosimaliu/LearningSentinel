@@ -14,7 +14,7 @@ public class LiKouAlg {
         print(arr,left);
     }
 
-    //1. **双指针**对已经排序的数组去重  ============================================================
+    //1. **双指针**对已经排序的数组去重    ============================================================
     static int removeDuplicates(int[] nums) {
         if(nums == null||nums.length==0) return 0;
         int left = 0;
