@@ -12,7 +12,7 @@ package example.mashibing;
 public class BfprtAlg {
 
     public static void main(String[] args) {
-        int k = getIndexOf("abaaaac", "ac");
+        int k = getIndexOf("abaaaac", "   ac");
         System.out.println("k的值是：" + k);
     }
 
