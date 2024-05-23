@@ -17,11 +17,11 @@ public class FrogJumpsStepsAlg {
         Long fStartTime = new Date().getTime();
         System.out.println(f(n));
         Long fEndTime = new Date().getTime();
-        System.out.println("f耗时:"+(fEndTime-fStartTime));
+        System.out.println("f耗时:"+(fEndTime-fStartTime)+"毫秒");
         Long f1StartTime = new Date().getTime();
         System.out.println(f1(n));
         Long f1EndTime= new Date().getTime();
-        System.out.println("f1耗时:"+(f1EndTime-f1StartTime));
+        System.out.println("f1耗时:"+(f1EndTime-f1StartTime)+"毫秒");
 
     }
 
