@@ -1,4 +1,4 @@
-package example;
+package example.advancedAlg;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
